@@ -1,0 +1,19 @@
+{
+  "name": "mean-stack-frames-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luan-prates/mean-stack-frames-web.git"
+  },
+  "author": "Luan Prates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luan-prates/mean-stack-frames-web/issues"
+  },
+  "homepage": "https://github.com/luan-prates/mean-stack-frames-web#readme"
+}
