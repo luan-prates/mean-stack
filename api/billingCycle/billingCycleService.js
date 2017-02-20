@@ -1,6 +1,16 @@
-const billingCycle = require('./billingCycle');
+const BillingCycle = require('./billingCycle');
 
-billingCycle.methods(['get', 'post', 'put', 'delete']);
-billingCycle.updateOptions({ new: true, runValidators: true });
+BillingCycle.methods(['get', 'post', 'put', 'delete']);
+BillingCycle.updateOptions({ new: true, runValidators: true });
 
-module.exports = billingCycle;
+BillingCycle.route('count', function(req, res, next){
+   BillingCycle.count(function(error, value){
+        if(error){
+            res.status(500).json({erros: [error]});
+        } else {
+            res.json({value});
+        }
+    });
+});
+
+module.exports = BillingCycle;  
