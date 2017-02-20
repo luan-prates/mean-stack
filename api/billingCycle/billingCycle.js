@@ -7,7 +7,7 @@ const creditSchema = new mongoose.Schema({
 });
 
 const debtSchema = new mongoose.Schema({
-    name: { type: String, required: true},
+    name: { type: String, required: true},   //mensagem específica para o campo a baixo 
     value: { type: Number, min: 0, required: [true, 'Informe o valor do débito!']},
     status: { type: String, required: true, uppercase: true,
         enum:['PAGO', 'PENDENTE', 'AGENDADO'] }
