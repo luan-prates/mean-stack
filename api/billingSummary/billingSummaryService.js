@@ -15,7 +15,7 @@ function getSummary(req, res) {
     } else {
       res.json(_.defaults(result[0], {credit: 0, debt: 0}));
     }
-  })
+  });
 }
 
 module.exports = { getSummary }
