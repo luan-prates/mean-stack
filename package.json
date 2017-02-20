@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/luan-prates/mean-stack-frames-web/issues"
   },
-  "homepage": "https://github.com/luan-prates/mean-stack-frames-web#readme"
+  "homepage": "https://github.com/luan-prates/mean-stack-frames-web#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-query-int": "^1.0.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.8.4",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.6",
+    "pm2": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
