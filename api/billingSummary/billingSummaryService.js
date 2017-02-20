@@ -13,6 +13,7 @@ function getSummary(req, res){
                 if(error){
             res.status(500).json({erros: [error]});
         } else {
+            res.json(_.defaults(result[0], { credit: 0, debt: 0 }));
         }
     });
 };
