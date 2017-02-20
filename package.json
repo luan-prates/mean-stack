@@ -4,6 +4,8 @@
   "description": "",
   "main": "loader.js",
   "scripts": {
+    "dev": "nodemon", 
+    "production": "pm2 start loader.js --name backend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
