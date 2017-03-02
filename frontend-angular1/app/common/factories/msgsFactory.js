@@ -10,7 +10,7 @@
             if (msgs instanceof Array){
                 msgs.forEach(msg => toastr[method](msg, title))
             } else {
-                toastr[method](msg, title)
+                toastr[method](msgs, title)
             }
         }
 
