@@ -7,6 +7,7 @@
             placeholder: '@',
             type: '@',
             model: '=',
+            readonly: '<',
         },
         controller:[
             'gridSystem',
@@ -20,7 +21,7 @@
                     <label for="{{ $ctrl.id }}">{{ $ctrl.label }}</label>
                     <input id="{{ $ctrl.id }}" class="form-control" 
                     placeholder="{{ $ctrl.placeholder }}" type="{{ $ctrl.type }}"
-                    ng-model="$ctrl.model"/>
+                    ng-model="$ctrl.model" ng-readonly="$ctrl.readonly"/>
                 </div>
             </div>
         `
