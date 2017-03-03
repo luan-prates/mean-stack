@@ -94,6 +94,7 @@
             }
         }
         
+        vm.calculateValues = function () {
             vm.credit = 0
             vm.debt = 0
             
