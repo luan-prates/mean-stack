@@ -14,15 +14,15 @@
 
         vm.refresh = function () {
             const page = parseInt($location.search().page) || 1
-            $http.get(`${url}?skip=${(page - 1)*10}&limit=10`)
+            $http.get(`${url}?skip=${(page - 1)*5}&limit=5`)
                 .then(function (res) {
                     vm.billingCycle = {credits:[{}], debts:[{}]}
                     vm.billingCycles = res.data
                     vm.calculateValues()
-                    tabs.show(vm, {tabList: true, tabCreate: true})
 
                     $http.get(`${url}/count`).then(function (res) {
-                        vm.pages = Math.ceil(res.data.value / 10)
+                        vm.pages = Math.ceil(res.data.value / 5)
+                        tabs.show(vm, {tabList: true, tabCreate: true})
                     })
             })    
         }
