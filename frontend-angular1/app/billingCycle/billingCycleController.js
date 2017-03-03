@@ -2,21 +2,28 @@
    angular.module('primeiraApp')
        .controller('BillingCycleCtrl', [
        '$http',
+       '$location',
        'msgs',
        'tabs',
        BillingCycleController
    ])
     
-    function BillingCycleController($http, msgs, tabs) {
+    function BillingCycleController($http, $location, msgs, tabs) {
         const vm = this
         const url = 'http://localhost:3003/api/billingCycles'
 
         vm.refresh = function () {
-            $http.get(url).then(function (res) {
-                vm.billingCycle = {credits:[{}], debts:[{}]}
-                vm.billingCycles = res.data
-                vm.calculateValues()
-                tabs.show(vm, {tabList: true, tabCreate: true})
+            const page = parseInt($location.search().page) || 1
+            $http.get(`${url}?skip=${(page - 1)*10}&limit=10`)
+                .then(function (res) {
+                    vm.billingCycle = {credits:[{}], debts:[{}]}
+                    vm.billingCycles = res.data
+                    vm.calculateValues()
+                    tabs.show(vm, {tabList: true, tabCreate: true})
+
+                    $http.get(`${url}/count`).then(function (res) {
+                        vm.pages = Math.ceil(res.data.value / 10)
+                    })
             })    
         }
         
